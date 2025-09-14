@@ -2,7 +2,7 @@
 $ErrorActionPreference = "Stop"
 
 # --- Configuration ---
-. "$PSScriptRoot\.private\.deploy.config.ps1"
+. "$PSScriptRoot\..\private\web-server-conf\.deploy.config.ps1"
 $SourceDir  = "dist"
 
 # --- End Configuration ---
