@@ -2,31 +2,39 @@
 
 .navbar {
   width: 100%;
-  background-color: #333;
-  overflow: hidden;
+  background-color: var(--color-navbar-bg); /* Use new variable */
+  border-bottom: 1px solid var(--color-border); /* Add a subtle divider */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Give it depth */
 }
 
 .navbar ul {
+  max-width: 960px; /* Match the .content max-width */
+  margin: 0 auto;   /* Center the link list */
+  padding: 0 2rem;  /* Match the .content padding */
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Makes the list horizontal */
+  display: flex;
   flex-direction: row;
 }
 
 .navbar li a {
   display: block;
-  color: white;
+  color: var(--color-navbar-text); /* Use new variable */
   text-decoration: none;
-  padding: 14px 20px;
-  transition: background-color 0.3s ease;
+  padding: 14px 20px 14px 0; /* More padding, but only on the right */
+  margin-right: 20px;
+  font-weight: 500;
+  border-bottom: 3px solid transparent; /* Placeholder for the active border */
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .navbar li a:hover {
-  background-color: #555;
+  color: var(--color-link-active); /* Use our active color for hover */
 }
 
-/* This is for the main content area below the navbar */
-.content {
-  padding: 20px;
+/* THIS IS THE NEW STYLE: 
+  This style will apply ONLY to the link that NavLink marks as active.
+*/
+.navbar li a.active-link {
+  color: var(--color-link-active);
+  border-bottom-color: var(--color-link-active); /* Adds the active underline */
 }

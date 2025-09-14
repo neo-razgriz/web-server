@@ -1,11 +1,18 @@
+/* src/index.css */
+
+/* 1. Define our new color palette and fonts */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Light Mode Palette */
+  --color-bg: #ffffff;
+  --color-text: #213547;
+  --color-navbar-bg: #f9f9f9;
+  --color-navbar-text: #333;
+  --color-link-active: #007bff;
+  --color-border: #e0e0e0;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +20,40 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* 2. Define our much nicer Dark Mode palette */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* These "off-black" colors are much easier on the eyes */
+    --color-bg: #1a1a1a;
+    --color-text: rgba(255, 255, 255, 0.87);
+    --color-navbar-bg: #242424;
+    --color-navbar-text: rgba(255, 255, 255, 0.87);
+    --color-link-active: #646cff;
+    --color-border: #444;
+  }
 }
 
+/* 3. Apply the new palette */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   min-height: 100vh;
 }
 
+/* 4. THIS IS THE MOST IMPORTANT FIX: The Content Wrapper
+  This styles the <div className="content"> wrapper we put
+  inside your HomePage.jsx and SupplementsPage.jsx.
+*/
+.content {
+  max-width: 960px;     /* Stops content from being too wide */
+  margin: 20px auto 0;  /* Centers the block on the page (top, auto-left/right, bottom) */
+  padding: 0 2rem;      /* Gives the content breathing room from the edges */
+}
+
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  font-size: 2.5rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 10px;
 }
