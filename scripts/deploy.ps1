@@ -7,6 +7,14 @@ $SourceDir  = "dist"
 
 # --- End Configuration ---
 
+# --- Add Key to SSH Agent ---
+echo "Loading SSH Key into agent..."
+# This will prompt for your passphrase ONCE and add it to the agent.
+# All following ssh/scp commands will use the agent automatically.
+ssh-add "$SSHKeyPath"
+echo "Key loaded."
+# --- End SSH Key ---
+
 echo "Starting build..."
 npm run build
 
