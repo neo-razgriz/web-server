@@ -2,7 +2,7 @@
 set -e
 
 # --- Configuration ---
-source "../private/web-server-conf/.deploy.config.sh"
+source "../../private/web-server-conf/.deploy.config.sh"
 SOURCE_DIR="dist"
 # --- End Configuration ---
 
