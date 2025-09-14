@@ -1,8 +1,5 @@
 import React from 'react';
-import './SupplementSchedule.css'; // We will create this file next
-
-// --- DATA ---
-// Data is stored in arrays of objects, making it easy to manage.
+import './SupplementPage.css';
 
 const dailyScheduleData = [
   {
@@ -94,10 +91,10 @@ const situationalCocktailsData = [
 // --- COMPONENT ---
 // This component renders the data using .map() to create the UI elements.
 
-const SupplementSchedule = () => {
+const SupplementPage = () => {
   return (
     <div className="schedule-container">
-      <h1>Your Supplement Schedule</h1>
+      <h1>Supplement Schedule</h1>
 
       <p className="disclaimer">
         <strong>Disclaimer:</strong> This information is for educational purposes only.
@@ -159,4 +156,4 @@ const SupplementSchedule = () => {
   );
 };
 
-export default SupplementSchedule;
+export default SupplementPage;
